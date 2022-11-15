@@ -30,5 +30,5 @@ app.use(ProductRouter);
 app.use(ProductCartRouter);
 app.use(BannerRouter);
 
-app.get("/", (req, res) => res.send("Hello Karwan-e-Hasnaat Server!"));
+app.get("/", (req, res) => res.send("Hello from Karwan-e-Hasnaat Server!"));
 app.listen(port, () => console.log(`Server is listening on port ${port}`));

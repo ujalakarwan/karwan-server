@@ -8,5 +8,5 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Connection to MongoDB Successful"))
-  .catch((err) => console.log(err));
+  .then(() => console.log("Connection to Mongo-DB Successful"))
+  .catch((err) => console.log("An ERROR has occured: " + err));
