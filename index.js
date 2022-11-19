@@ -13,6 +13,8 @@ const ProductCartRouter = require("./src/routes/productCarts.routes");
 const BannerRouter = require("./src/routes/banners.routes");
 const HotelRouter = require("./src/routes/hotels.routes");
 const TransportRouter = require("./src/routes/transport.routes");
+const HotelBookingRouter = require("./src/routes/hotelbooking.routes");
+const TransportBookingRouter = require("./src/routes/transportbooking.routes");
 
 require("./db/connect");
 const app = express();
@@ -33,6 +35,8 @@ app.use(ProductCartRouter);
 app.use(BannerRouter);
 app.use(HotelRouter);
 app.use(TransportRouter);
+app.use(HotelBookingRouter)
+app.use(TransportBookingRouter)
 
 app.get("/", (req, res) => res.send("Hello Karwan-e-Hasnaat Server!"));
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
