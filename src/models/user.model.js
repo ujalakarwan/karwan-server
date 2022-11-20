@@ -7,6 +7,11 @@ const UserSchema = new mongoose.Schema({
   address: { type: String, required: true },
   profilePic: { type: String, required: false },
   password: { type: String, required: true },
+  family:[{
+    name:{type:String},
+    contact:{type:String},
+    relation:{type:String},
+  }]
 });
 
 const User = new mongoose.model("User", UserSchema);

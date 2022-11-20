@@ -61,6 +61,17 @@ async function updateUser(req, res) {
 }
 
 //////////////////////////////////////////////////////////////////////////////
+async function updateFamily(req, res) {
+  try {
+    await User.findByIdAndUpdate(req.params.id, req.body);
+    res.status(200).json({ msg: "User Updated" });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ msg: err.message });
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////
 async function deleteUser(req, res) {
   const userId = req.params.id;
   try {
@@ -72,4 +83,17 @@ async function deleteUser(req, res) {
   }
 }
 
-module.exports = { getUsers, getSingleUser, addUser, updateUser, deleteUser };
+//////////////////////////////////////////////////////////////////////////////
+async function deleteFamily(req, res) {
+  const userId = req.params.id;
+  try {
+    var a=await User.findById(userId);
+    
+  //  res.status(200).json({ msg: "User Deleted" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ msg: err.message });
+  }
+}
+
+module.exports = { getUsers, getSingleUser, addUser, updateUser, deleteUser,deleteFamily,updateFamily };
