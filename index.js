@@ -6,6 +6,8 @@ const videoRouter = require("./src/routes/videos.routes");
 const bookRequestRouter = require("./src/routes/bookRequests.routes");
 const supplicationRouter = require("./src/routes/supplications.routes");
 const bookRouter = require("./src/routes/books.routes");
+const wishlistRouter = require("./src/routes/wishlist.routes");
+const authRouter= require("./src/routes/auth")
 const groupRouter = require("./src/routes/groups.routes");
 const visasRouter = require("./src/routes/visas.routes");
 const ProductRouter = require("./src/routes/products.routes");
@@ -37,6 +39,7 @@ app.use(HotelRouter);
 app.use(TransportRouter);
 app.use(HotelBookingRouter)
 app.use(TransportBookingRouter)
-
+app.use(wishlistRouter)
+app.use(authRouter)
 app.get("/", (req, res) => res.send("Hello Karwan-e-Hasnaat Server!"));
 app.listen(port, () => console.log(`Server is listening on port ${port}`));

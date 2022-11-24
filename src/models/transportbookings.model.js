@@ -16,6 +16,11 @@ const TransportBookingSchema = new mongoose.Schema({
   Total:{
     type:Number
   },
+  paymentstatus:{
+    Type:{type:String},
+    AccountNo:{type:String},
+    
+  }
 
 });
 

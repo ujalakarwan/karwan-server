@@ -11,6 +11,11 @@ const ProductCartSchema = new mongoose.Schema({
       amount: { type: Number, default: 0 },
     },
   ],
+  paymentstatus:{
+    Type:{type:String},
+    AccountNo:{type:String},
+    
+  }
 });
 
 const ProductCart = new mongoose.model("ProductCart", ProductCartSchema);
