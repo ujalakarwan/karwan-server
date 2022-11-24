@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Id = mongoose.Schema.Types.ObjectId;
 
 const VisaSchema = new mongoose.Schema({
   fullName: { type: String /* , required: true */ },
@@ -16,6 +17,7 @@ const VisaSchema = new mongoose.Schema({
   idCardFront: { type: String /* , required: true */ },
   idCardBack: { type: String /* , required: true */ },
   passport: { type: String /* , required: true */ },
+  user_id: { type: Id, ref: "User", required: true },
 });
 
 const Visa = new mongoose.model("Visa", VisaSchema);
