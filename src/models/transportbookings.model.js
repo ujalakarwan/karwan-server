@@ -10,8 +10,8 @@ const TransportBookingSchema = new mongoose.Schema({
     Type:{type: String },
     Price:{type: Number},
     id:{type:Number,default:0},
-    BookedCheckin:{type:Date},
-    BookedCheckout:{type:Date}
+    BookedCheckin:{type:String},
+    BookedCheckout:{type:String}
   }],
   Total:{
     type:Number

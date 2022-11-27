@@ -11,7 +11,8 @@ const UserSchema = new mongoose.Schema({
     name:{type:String},
     contact:{type:String},
     relation:{type:String},
-  }]
+  }],
+  RegisterationDate:{type:String}
 });
 
 const User = new mongoose.model("User", UserSchema);

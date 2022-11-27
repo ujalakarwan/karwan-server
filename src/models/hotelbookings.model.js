@@ -3,16 +3,16 @@ const mongoose = require("mongoose");
 const Id = mongoose.Schema.Types.ObjectId;
 
 const HotelBookingSchema = new mongoose.Schema({
-  user_id: { type: Id, ref: "User", required: true },
+  user_id: { type: Id, ref: "User"},
   status: { type: String, default: "Pending" },
-  hotel:{type: Id, ref: "Hotels", required: true },
+  hotel:{type: Id, ref: "Hotels"},
   bookedRoom:[{
     Type:{type: String },
     Size:{type: String},
     Price:{type: Number},
     id:{type:Number,default:0},
-    BookedCheckin:{type:Date},
-    BookedCheckout:{type:Date}
+    BookedCheckin:{type:String},
+    BookedCheckout:{type:String}
   }],
   Total:{
     type:Number
@@ -20,7 +20,6 @@ const HotelBookingSchema = new mongoose.Schema({
   paymentstatus:{
     Type:{type:String},
     AccountNo:{type:String},
-    
   }
 
 });

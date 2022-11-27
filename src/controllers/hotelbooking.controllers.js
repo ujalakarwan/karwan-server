@@ -5,19 +5,18 @@ async function addProductCart(req, res) {
 
   const { user_id, hotel,bookedRoom,Total } = req.body;
   try {
-    const preProductCart = await ProductCart.findOne({ _id: req.body._id });
-    console.log(preProductCart);
-    if (preProductCart) {
-      res.status(404).send("This Booking already exists");
-    } else {
-      const addProductCart = new ProductCart({
-        user_id,
-        hotel,bookedRoom,Total 
-      });
-      await addProductCart.save();
+    console.log("sahs",req.body)
+   // const preProductCart = await ProductCart.findOne({ _id: req.body._id });
+    //if (preProductCart) {
+    //  res.status(404).send("This Booking already exists");
+      //const addProductCart = new ProductCart({
+      //  bookedRoom,Total 
+     // });
+      await ProductCart.create({user_id,hotel,bookedRoom,Total})
+    //  await addProductCart.save();
       res.status(201).json(addProductCart);
       console.log(addProductCart);
-    }
+
   } catch (error) {
     res.status(404).send(error.message);
   }

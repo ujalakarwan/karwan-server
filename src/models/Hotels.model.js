@@ -15,18 +15,16 @@ const HotelsSchema = new mongoose.Schema({
     Price:{type: Number},
     id:{type:Number,default:0},
     availability:[{
-        Startdate:{type: Date},
-        Enddate:{type:Date},
+        Startdate:{type:String},
+        Enddate:{type:String},
         timeslot:[{type:String}],
     }]
   }],
-  reviews: [
-    {
+  reviews: [{
       user_id: { type: Id, ref: "User", required: true },
       comment: { type: String, required: true },
       userRating: { type: Number, required: true },
-    },
-  ],
+    }],
   distances: [{
     place:{type:String},
     distance:{type:String}

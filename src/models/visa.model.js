@@ -18,6 +18,7 @@ const VisaSchema = new mongoose.Schema({
   idCardBack: { type: String /* , required: true */ },
   passport: { type: String /* , required: true */ },
   user_id: { type: Id, ref: "User", required: true },
+  visaStatus:{type:String}
 });
 
 const Visa = new mongoose.model("Visa", VisaSchema);

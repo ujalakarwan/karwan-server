@@ -11,8 +11,8 @@ const TransportSchema = new mongoose.Schema({
     Price:{type: Number},
     id:{type:Number,default:0},
     availability:[{
-      Startdate:{type: Date},
-      Enddate:{type:Date},
+      Startdate:{type:String},
+      Enddate:{type:String},
         timeslot:[{type:String}]
     }]
   }],
