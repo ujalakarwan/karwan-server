@@ -54,6 +54,23 @@ async function getSingleGroup(req, res) {
 }
 
 //////////////////////////////////////////////////////////////////////////////
+async function getSingleMember(req, res) {
+  const groupId = req.params.id;
+  const memberId=req.params.mid
+  try {
+    const groupData = await Group.findById(groupId)
+      /* .populate("groupAdmin_id") */
+      .populate("groupMembers")
+      .exec();
+    const answer=groupData?.groupMembers.find((item)=>item._id==memberId)
+    res.status(200).json(answer);
+    console.log(groupData);
+  } catch (error) {
+    res.status(404).send(error);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////
 async function updateGroup(req, res) {
   try {
     await Group.findByIdAndUpdate(req.params.id, req.body);
@@ -79,6 +96,7 @@ async function deleteGroup(req, res) {
 module.exports = {
   getGroups,
   getSingleGroup,
+  getSingleMember,
   addGroup,
   updateGroup,
   deleteGroup,
