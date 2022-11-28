@@ -21,7 +21,6 @@ const HotelBookingSchema = new mongoose.Schema({
     Type:{type:String},
     AccountNo:{type:String},
   }
-
 });
 
 const ProductCart = new mongoose.model("HotelBooking", HotelBookingSchema);

@@ -16,7 +16,6 @@ async function addProductCart(req, res) {
     //  await addProductCart.save();
       res.status(201).json(addProductCart);
       console.log(addProductCart);
-
   } catch (error) {
     res.status(404).send(error.message);
   }
