@@ -5,7 +5,6 @@ const Id = mongoose.Schema.Types.ObjectId;
 const HotelsSchema = new mongoose.Schema({
   Name: { type: String },
   Location: { type: String },
-  GoogleLoc: { type: String },
   images: { type: String },
   Description: { type: String},
   Facilities: { type: String},
@@ -27,7 +26,11 @@ const HotelsSchema = new mongoose.Schema({
     }],
   distances: [{
     place:{type:String},
-    distance:{type:String}
+    distance:{type:String},
+    Location:{
+      lat:{type:Number},
+      lon:{type:Number}
+    }
   }],
 });
 

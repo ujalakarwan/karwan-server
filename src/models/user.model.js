@@ -12,7 +12,11 @@ const UserSchema = new mongoose.Schema({
     contact:{type:String},
     relation:{type:String},
   }],
-  RegisterationDate:{type:String}
+  RegisterationDate:{type:String},
+  location:{
+    lat:{type:Number},
+    lon:{type:Number}
+  }
 });
 
 const User = new mongoose.model("User", UserSchema);
