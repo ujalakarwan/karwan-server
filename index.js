@@ -17,6 +17,8 @@ const HotelRouter = require("./src/routes/hotels.routes");
 const TransportRouter = require("./src/routes/transport.routes");
 const HotelBookingRouter = require("./src/routes/hotelbooking.routes");
 const TransportBookingRouter = require("./src/routes/transportbooking.routes");
+const HolyPlacesRouter = require("./src/routes/holyplaces.routes");
+const TransactionRouter = require("./src/routes/Transanctions.routes");
 
 require("./db/connect");
 const app = express();
@@ -28,7 +30,7 @@ app.use(express.json({ limit: "1000000kb" }));
 app.use(userRouter);
 app.use(videoRouter);
 app.use(bookRouter);
-app.use(supplicationRouter);
+app.use(supplicationRouter)
 app.use(bookRequestRouter);
 app.use(groupRouter);
 app.use(visasRouter);
@@ -41,5 +43,7 @@ app.use(HotelBookingRouter)
 app.use(TransportBookingRouter)
 app.use(wishlistRouter)
 app.use(authRouter)
+app.use(HolyPlacesRouter)
+app.use(TransactionRouter)
 app.get("/", (req, res) => res.send("Hello Karwan-e-Hasnaat Server!"));
 app.listen(port, () => console.log(`Server is listening on port ${port}`));

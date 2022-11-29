@@ -16,7 +16,15 @@ const UserSchema = new mongoose.Schema({
   location:{
     lat:{type:Number},
     lon:{type:Number}
-  }
+  },
+  AdditionalCharges:[{
+    Type:{type:String},
+    Number:{type:String},
+    Date:{type:String},
+    id:{type:Number},
+    Description:{type:String},
+    Amount:{type:Number}
+  }]
 });
 
 const User = new mongoose.model("User", UserSchema);
