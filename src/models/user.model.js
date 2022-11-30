@@ -17,6 +17,10 @@ const UserSchema = new mongoose.Schema({
     lat:{type:Number},
     lon:{type:Number}
   },
+  locationTime:{
+    Time:{type:String},
+    Date:{type:String}
+  },
   AdditionalCharges:[{
     Type:{type:String},
     Number:{type:String},
