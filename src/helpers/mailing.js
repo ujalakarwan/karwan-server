@@ -6,8 +6,8 @@ var transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "cacfyp@gmail.com",
-    pass: "wchaurlbodzacfam",
+    user: "ukdaxno@gmail.com",
+    pass: "csxxaxhfvovvubcd",
   },
   tls: {
     rejectUnauthorized: false,
@@ -36,10 +36,13 @@ module.exports.resetPasswordMail = (email, token) => {
 module.exports.reportMail = (email, path) => {
   console.log("path",path)
   var mailOptions = {
-    from: "cacfyp@gmail.com",
+    from: "ukdaxno@gmail.com",
     to: email,
     subject: "Report Email",
-    attachment: path,
+     attachments: [{
+      path: path,
+      contentType: 'application/pdf'
+    }],
   };
 
   transporter.sendMail(mailOptions, function (error, info) {

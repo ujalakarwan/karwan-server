@@ -39,7 +39,10 @@ async function sendpdf(req, res, next) {
         advances:req.body.advances,
         cheques:req.body.cheques
       },
-      path: `../Server/public/pdfReports/${req.body.user.email}_Report.pdf`,
+      path: path.join(
+        __dirname,
+        `../public/pdfReports/${req.body.user.email}_Report.pdf`
+      ),
     };
 
     pdf
